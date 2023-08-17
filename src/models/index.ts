@@ -1,7 +1,9 @@
-import mongoose from 'mongoose'
+const { default: mongoose } = require('mongoose')
 
+import connectDBs from '../utils/connectDatabase'
 import UserSchema, { UserDoc } from './User'
+const { chatBoxDB, uniDentalDB } = connectDBs()
 
-const UserModel = mongoose.model<UserDoc>('User', UserSchema)
+const UserModel = uniDentalDB.model<UserDoc>('User', UserSchema)
 
 export { UserModel }

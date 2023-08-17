@@ -15,6 +15,7 @@ export default class UserCallback {
       res.status(500).json({ error: err })
     }
   }
+
   static async getOne(req: Request, res: Response) {
     try {
       const userID = req.params.id

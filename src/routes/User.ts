@@ -5,6 +5,7 @@ import { authenticateToken } from '../middleware/AuthenticateToken'
 const UserRouter = Router()
 
 UserRouter.get('/', authenticateToken, UserCallback.get)
+
 UserRouter.get('/:id', authenticateToken, UserCallback.getOne)
 UserRouter.post('/', authenticateToken, UserCallback.create)
 UserRouter.put('/:id', authenticateToken, UserCallback.update)

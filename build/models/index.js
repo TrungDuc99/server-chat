@@ -4,7 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserModel = void 0;
-var mongoose_1 = __importDefault(require("mongoose"));
+var mongoose = require('mongoose').default;
+var connectDatabase_1 = __importDefault(require("../utils/connectDatabase"));
 var User_1 = __importDefault(require("./User"));
-var UserModel = mongoose_1.default.model('User', User_1.default);
+var _a = (0, connectDatabase_1.default)(), chatBoxDB = _a.chatBoxDB, uniDentalDB = _a.uniDentalDB;
+var UserModel = uniDentalDB.model('User', User_1.default);
 exports.UserModel = UserModel;
